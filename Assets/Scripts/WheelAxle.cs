@@ -138,14 +138,28 @@ namespace SF3DRacing
             if (_isMotor == false)
                 return;
 
+
             _leftWheelCollider.motorTorque = torque;
             _rightWheelCollider.motorTorque = torque;
+
+            // Debug.Log($"Motor Torque = {torque}");
         }
 
         public void ApplyBrakeTorque(float torque)
         {
             _leftWheelCollider.brakeTorque = torque;
             _rightWheelCollider.brakeTorque = torque;
+        }
+
+        public float GetAvarageRmp()
+        {
+            // Debug.Log($"Left RMP = {_leftWheelCollider.rpm} || Right RPM = {_rightWheelCollider.rpm}");
+            return (_leftWheelCollider.rpm + _rightWheelCollider.rpm) / 2;
+        }
+
+        public float GetWheelRadius()
+        {
+            return _leftWheelCollider.radius;
         }
 
         private void SyncMeshTransform()

@@ -21,16 +21,39 @@ namespace SF3DRacing
         [SerializeField] private float _angularDragCoef;
 
         private Rigidbody _rb;
-        private const float SPEED_CONVERT_COEF = 3.6f;
+        private const float SPEED_MS_TO_KMH_COEF = 3.6f;
 
         public float MotorTorque;
         public float BreakTorque;
         public float SteerAngle;
 
         public float ChassisLength;
-        public float LinearVelocity => _rb.velocity.magnitude * SPEED_CONVERT_COEF;
+        public float LinearVelocity => _rb.velocity.magnitude * SPEED_MS_TO_KMH_COEF;
 
         [SerializeField] private bool _isPrintLog;
+        [SerializeField] private bool _isPrintWheelSpeedLog;
+
+        public float GetAvarageRmp()
+        {
+            var sum = _wheelAxles.Aggregate(0f, (acc, axle) => acc += axle.GetAvarageRmp());
+
+            // Debug.Log($"sum = {sum}");
+            return sum / _wheelAxles.Length;
+        }
+
+        public float GetWheelSpeed()
+        {
+            const float coef = 2 * Mathf.PI / 60 * SPEED_MS_TO_KMH_COEF;
+            // return GetAvarageRmp() * _wheelAxles[0].GetWheelRadius() * 2 * 0.1885f;
+            var avgRpm = GetAvarageRmp();
+            var radius = _wheelAxles[0].GetWheelRadius();
+            var result = avgRpm * radius * coef;
+
+            if (_isPrintWheelSpeedLog)
+                Debug.Log($"Coef = {coef} || Avg RPM = {avgRpm} || Radius = {radius} || Res = {result}");
+
+            return result;
+        }
 
         protected void Start()
         {

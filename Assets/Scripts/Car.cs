@@ -7,10 +7,12 @@ namespace SF3DRacing
     {
         [SerializeField, Range(0f, 60f)] private float _maxSteerAngle;
         [SerializeField] private float _maxBrakeTorque;
+        [SerializeField] private bool _isPrintLog;
 
         [SerializeField] private AnimationCurve _engineTorqueCurve;
         [SerializeField] private float _maxMotorTorque;
         [SerializeField] private float _maxSpeed;
+        public float MaxSpeed => _maxSpeed;
 
 
         public float ThrottleControl;
@@ -18,6 +20,7 @@ namespace SF3DRacing
         public float LinearVelocityDebug;
         public float BrakeControl;
         public float LinearVelocity => _chassis.LinearVelocity;
+        public float WheelAvgSpeed => _chassis.GetWheelSpeed();
 
         private CarChassis _chassis;
 
@@ -37,6 +40,9 @@ namespace SF3DRacing
             _chassis.BreakTorque = _maxBrakeTorque * BrakeControl;
             _chassis.MotorTorque = torque * _maxMotorTorque * ThrottleControl;
             _chassis.SteerAngle = _maxSteerAngle * SteerControl;
+
+            if (_isPrintLog)
+                Debug.Log($"Torque eval = {torque} || Brake = {_chassis.BreakTorque} || Motor = {_chassis.MotorTorque} || Steer = {_chassis.SteerAngle}");
         }
     }
 }
