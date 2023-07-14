@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace SF3DRacing
@@ -5,6 +6,7 @@ namespace SF3DRacing
     public class CarInputControl : MonoBehaviour
     {
         [SerializeField] private Car _car;
+        [SerializeField] private SpeedometerUI _speedometer;
         [SerializeField] private AnimationCurve _brakeCurve;
         [SerializeField] private AnimationCurve _slowDownCurve;
         [SerializeField] private AnimationCurve _steerCurve;
@@ -29,6 +31,25 @@ namespace SF3DRacing
             UpdateThrottleAndBrake();
             UpdateSteer();
             UpdateAutoBrake();
+
+            UpdateSpeedometer();
+
+            // TODO: Debug
+            if (Input.GetKeyDown(KeyCode.E))
+                _car.UpGear();
+            if (Input.GetKeyDown(KeyCode.Q))
+                _car.DownGear();
+        }
+
+        private void UpdateSpeedometer()
+        {
+            if (!_speedometer)
+                return;
+
+            _speedometer.CurrentSpeed = _wheelSpeedAbs;
+            _speedometer.CurrentRPM = _car.MotorRpm;
+            _speedometer.GearCurrent = _car.SelectedGear;
+            _speedometer.GearMax = _car.GearsCount;
         }
 
         private void UpdateAutoBrake()
@@ -55,14 +76,15 @@ namespace SF3DRacing
 
         private void UpdateThrottleAndBrake()
         {
-            if (_verticalAxis == 0) {
+            if (_verticalAxis == 0)
+            {
                 _car.ThrottleControl = 0;
                 return;
             }
 
             if (Mathf.Sign(_verticalAxis) == Mathf.Sign(_wheelSpeed) || Mathf.Abs(_wheelSpeed) < 0.5f)
             {
-                _car.ThrottleControl = _verticalAxis;
+                _car.ThrottleControl = Mathf.Abs(_verticalAxis);
                 _car.BrakeControl = 0;
 
                 if (_isPrintThrottleLog)
@@ -76,6 +98,12 @@ namespace SF3DRacing
                 if (_isPrintThrottleLog)
                     Debug.Log($"Change direction - stopping car || Brake eval = {_car.BrakeControl} || Wheel speed = {_wheelSpeed} || Max speed = {_car.MaxSpeed}");
             }
+
+            // Gears
+            if (_verticalAxis < 0 && _wheelSpeedAbs <= 0.5f)
+                _car.ShiftToReverseGear();
+            if (_verticalAxis > 0 && _wheelSpeedAbs <= 0.5f)
+                _car.ShiftToFirstGear();
         }
 
         private void UpdateAxis()
