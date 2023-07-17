@@ -11,6 +11,7 @@ namespace SF3DRacing
         [SerializeField] private float _motorMaxTorque;
         [SerializeField] private float _motorMinRpm;
         [SerializeField] private float _motorMaxRpm;
+        public float MaxRpm => _motorMaxRpm;
 
         [Header("Control")]
         [SerializeField, Range(0f, 60f)] private float _maxSteerAngle;

@@ -162,6 +162,12 @@ namespace SF3DRacing
             return _leftWheelCollider.radius;
         }
 
+        public void ConfigureVehicleSubsteps(float speedThreshold, int speedBelowThreshold, int speedAboveThreshold)
+        {
+            _leftWheelCollider.ConfigureVehicleSubsteps(speedThreshold, speedBelowThreshold, speedAboveThreshold);
+            _rightWheelCollider.ConfigureVehicleSubsteps(speedThreshold, speedBelowThreshold, speedAboveThreshold);
+        }
+
         private void SyncMeshTransform()
         {
             UpdateWheelTransform(_leftWheelCollider, _leftWheelTransform);

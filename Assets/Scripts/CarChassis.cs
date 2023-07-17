@@ -61,6 +61,11 @@ namespace SF3DRacing
 
             if (_centerOfMass)
                 _rb.centerOfMass = _centerOfMass.localPosition;
+
+            foreach (var axle in _wheelAxles)
+            {
+                axle.ConfigureVehicleSubsteps(50, 50, 50);
+            }
         }
 
         protected void FixedUpdate()
