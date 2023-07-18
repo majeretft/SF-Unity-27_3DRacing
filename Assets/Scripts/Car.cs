@@ -44,6 +44,7 @@ namespace SF3DRacing
 
 
         public float LinearVelocity => _chassis.LinearVelocity;
+        public float LinearVelocityNormalized => _chassis.LinearVelocity / _maxSpeed;
         public float WheelAvgSpeed => _chassis.GetWheelSpeed();
         public float MotorRpm => _motorRpm;
 
