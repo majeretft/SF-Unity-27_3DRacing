@@ -41,6 +41,17 @@ namespace SF3DRacing
                 _car.DownGear();
         }
 
+        public void Stop()
+        {
+            _verticalAxis = 0;
+            _horizontalAxis = 0;
+            _brakeAxis = 0;
+
+            _car.BrakeControl = 1;
+            _car.ThrottleControl = 0;
+            _car.SteerControl = 0;
+        }
+
         private void UpdateSpeedometer()
         {
             if (!_speedometer)

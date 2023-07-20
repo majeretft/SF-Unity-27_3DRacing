@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace SF3DRacing
 {
-    public class CameraFollow : MonoBehaviour
+    public class CameraFollow : CameraComponent
     {
         [SerializeField] private Transform _target;
         [SerializeField] private Rigidbody _rigitbody;
@@ -37,8 +37,14 @@ namespace SF3DRacing
 
             // Rotation
             transform.LookAt(_target.position + new Vector3(0, _viewHeight, 0));
+        }
 
+        public override void SetProperties(Car car, Camera camera)
+        {
+            base.SetProperties(car, camera);
 
+            _target = car.transform;
+            _rigitbody = car.Rigidbody;
         }
     }
 }

@@ -21,6 +21,7 @@ namespace SF3DRacing
         [SerializeField] private float _angularDragCoef;
 
         private Rigidbody _rb;
+        public Rigidbody Rigidbody => _rb ?? GetComponent<Rigidbody>();
         private const float SPEED_MS_TO_KMH_COEF = 3.6f;
 
         public float MotorTorque;

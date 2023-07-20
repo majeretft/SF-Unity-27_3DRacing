@@ -2,9 +2,8 @@ using UnityEngine;
 
 namespace SF3DRacing
 {
-    public class CameraShaker : MonoBehaviour
+    public class CameraShaker : CameraComponent
     {
-        [SerializeField] private Car _car;
         [SerializeField, Range(0, 1)] private float _normalizedSpeedShake;
         [SerializeField] private float _shakeAmount;
 

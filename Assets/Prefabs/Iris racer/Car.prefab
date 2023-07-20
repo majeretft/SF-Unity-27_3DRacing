@@ -489,7 +489,7 @@ GameObject:
   - component: {fileID: 1147714723889934888}
   - component: {fileID: 1308739690257677817}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: CarCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -649,7 +649,7 @@ Transform:
   - {fileID: 8332767832058051144}
   - {fileID: 2005713157288310795}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &5093739627430296721
 Rigidbody:

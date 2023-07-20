@@ -108,7 +108,7 @@ namespace SF3DRacing
 
                 var textTransform = instance.transform.Find("Text");
                 if (i > 5)
-                    textTransform.eulerAngles = textTransform.eulerAngles + new Vector3(0, 0, 180);
+                    textTransform.eulerAngles += new Vector3(0, 0, 180);
 
                 var textElement = textTransform.GetComponent<Text>();
                 textElement.text = ((i + 1) * speedStep).ToString();

@@ -47,6 +47,7 @@ namespace SF3DRacing
         public float LinearVelocityNormalized => _chassis.LinearVelocity / _maxSpeed;
         public float WheelAvgSpeed => _chassis.GetWheelSpeed();
         public float MotorRpm => _motorRpm;
+        public Rigidbody Rigidbody => _chassis == null ? GetComponent<CarChassis>().Rigidbody : _chassis.Rigidbody;
 
         private CarChassis _chassis;
 

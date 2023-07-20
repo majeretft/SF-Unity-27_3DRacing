@@ -2,11 +2,8 @@ using UnityEngine;
 
 namespace SF3DRacing
 {
-    public class CameraFovCorrector : MonoBehaviour
+    public class CameraFovCorrector : CameraComponent
     {
-        [SerializeField] private Car _car;
-        [SerializeField] private Camera _camera;
-
         [SerializeField] private float _fovMin;
         [SerializeField] private float _fovMax;
 
