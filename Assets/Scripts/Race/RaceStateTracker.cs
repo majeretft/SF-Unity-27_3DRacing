@@ -18,6 +18,7 @@ namespace SF3DRacing
         public event UnityAction CompletedEvent;
         public event UnityAction<TrackPoint> TrackPointTriggeredEvent;
         public event UnityAction<int> LapCompletedEvent;
+        public event UnityAction<RaceStateEnum> StateChangedEvent;
 
         [SerializeField] private int _lapsToComplete;
         [SerializeField] private Timer _countdownTimer;
@@ -93,6 +94,8 @@ namespace SF3DRacing
         private void ChangeState(RaceStateEnum state)
         {
             _state = state;
+
+            StateChangedEvent?.Invoke(_state);
         }
 
         private void CompleteRace()
