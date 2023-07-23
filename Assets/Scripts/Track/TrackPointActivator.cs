@@ -8,7 +8,7 @@ namespace SF3DRacing
 
         protected void Start()
         {
-            _hint.SetActive(false);
+            _hint.SetActive(IsTarget);
         }
 
         protected override void OnMarkedAsTarget()

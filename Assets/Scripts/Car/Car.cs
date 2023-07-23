@@ -30,12 +30,12 @@ namespace SF3DRacing
         [SerializeField] private float _motorTorque;
         [SerializeField] private float _motorRpm;
         [SerializeField] private float _selectedGear;
-        
+
         [SerializeField] private int _selectedGearIndex;
-        
+
         public int GearsCount => _gears.Length;
         public int SelectedGear => _selectedGearIndex + 1;
-        
+
         [SerializeField] private float _rearGear;
         public float ThrottleControl;
         public float SteerControl;
@@ -51,6 +51,7 @@ namespace SF3DRacing
 
         private CarChassis _chassis;
 
+        #region Unity Events
         protected void Start()
         {
             _chassis = GetComponent<CarChassis>();
@@ -73,6 +74,56 @@ namespace SF3DRacing
             if (_isPrintLog)
                 Debug.Log($"Torque eval = {_motorTorque} || Brake = {_chassis.BreakTorque} || Motor = {_chassis.MotorTorque} || Steer = {_chassis.SteerAngle}");
         }
+        #endregion
+
+        #region Public API
+        public void UpGear()
+        {
+            ShiftGear(_selectedGearIndex + 1);
+        }
+
+        public void DownGear()
+        {
+            ShiftGear(_selectedGearIndex - 1);
+        }
+
+        public void ShiftToReverseGear()
+        {
+            _selectedGear = _rearGear;
+            _selectedGearIndex = -1;
+        }
+
+        public void ShiftToFirstGear()
+        {
+            ShiftGear(0);
+        }
+
+        public void ShiftToNeutralGear()
+        {
+            _selectedGear = 0;
+        }
+
+        public void Respawn(Vector3 position, Quaternion rotation)
+        {
+            Reset();
+
+            transform.position = position;
+            transform.rotation = rotation;
+        }
+
+        public void Reset()
+        {
+            _chassis.Reset();
+
+            _chassis.MotorTorque = 0;
+            _chassis.BreakTorque = 0;
+            _chassis.SteerAngle = 0;
+
+            ThrottleControl = 0;
+            BrakeControl = 0;
+            SteerControl = 0;
+        }
+        #endregion
 
         private void UpdateMotorTorque()
         {
@@ -98,32 +149,6 @@ namespace SF3DRacing
             gearIndex = Mathf.Clamp(gearIndex, 0, _gears.Length - 1);
             _selectedGearIndex = gearIndex;
             _selectedGear = _gears[gearIndex];
-        }
-
-        public void UpGear()
-        {
-            ShiftGear(_selectedGearIndex + 1);
-        }
-
-        public void DownGear()
-        {
-            ShiftGear(_selectedGearIndex - 1);
-        }
-
-        public void ShiftToReverseGear()
-        {
-            _selectedGear = _rearGear;
-            _selectedGearIndex = -1;
-        }
-
-        public void ShiftToFirstGear()
-        {
-            ShiftGear(0);
-        }
-
-        public void ShiftToNeutralGear()
-        {
-            _selectedGear = 0;
         }
     }
 }

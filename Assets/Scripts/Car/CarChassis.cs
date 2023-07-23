@@ -34,6 +34,27 @@ namespace SF3DRacing
         [SerializeField] private bool _isPrintLog;
         [SerializeField] private bool _isPrintWheelSpeedLog;
 
+        protected void Start()
+        {
+            _rb = GetComponent<Rigidbody>();
+
+            if (_centerOfMass)
+                _rb.centerOfMass = _centerOfMass.localPosition;
+
+            foreach (var axle in _wheelAxles)
+            {
+                axle.ConfigureVehicleSubsteps(50, 50, 50);
+            }
+        }
+
+        protected void FixedUpdate()
+        {
+            UpdateDownForce();
+            UpdateAngularDrag();
+
+            UpdateWheelAxles();
+        }
+
         public float GetAvarageRmp()
         {
             var sum = _wheelAxles.Aggregate(0f, (acc, axle) => acc += axle.GetAvarageRmp());
@@ -56,25 +77,10 @@ namespace SF3DRacing
             return result;
         }
 
-        protected void Start()
+        public void Reset()
         {
-            _rb = GetComponent<Rigidbody>();
-
-            if (_centerOfMass)
-                _rb.centerOfMass = _centerOfMass.localPosition;
-
-            foreach (var axle in _wheelAxles)
-            {
-                axle.ConfigureVehicleSubsteps(50, 50, 50);
-            }
-        }
-
-        protected void FixedUpdate()
-        {
-            UpdateDownForce();
-            UpdateAngularDrag();
-
-            UpdateWheelAxles();
+            _rb.velocity = Vector3.zero;
+            _rb.angularVelocity = Vector3.zero;
         }
 
         private void UpdateDownForce()

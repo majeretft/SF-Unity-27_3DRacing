@@ -14,7 +14,8 @@ namespace SF3DRacing
         [SerializeField] private RaceStateTracker _raceStateTracker;
         [SerializeField] private Car _playerCar;
         [SerializeField] private CarInputControl _playerCarInputControl;
-
+        [SerializeField] private RaceTimeTracker _raceTimeTracker;
+        [SerializeField] private RaceResultTime _raceResultTime;
 
         protected void Awake()
         {
@@ -42,6 +43,12 @@ namespace SF3DRacing
 
             if (monoBeh is IDependency<CarInputControl>)
                 (monoBeh as IDependency<CarInputControl>).Construct(_playerCarInputControl);
+
+            if (monoBeh is IDependency<RaceTimeTracker>)
+                (monoBeh as IDependency<RaceTimeTracker>).Construct(_raceTimeTracker);
+
+            if (monoBeh is IDependency<RaceResultTime>)
+                (monoBeh as IDependency<RaceResultTime>).Construct(_raceResultTime);
         }
     }
 }

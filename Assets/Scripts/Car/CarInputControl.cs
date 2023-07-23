@@ -42,11 +42,18 @@ namespace SF3DRacing
 
         public void Stop()
         {
+            Reset();
+
+            _car.BrakeControl = 1;
+        }
+
+        public void Reset()
+        {
             _verticalAxis = 0;
             _horizontalAxis = 0;
             _brakeAxis = 0;
 
-            _car.BrakeControl = 1;
+            _car.BrakeControl = 0;
             _car.ThrottleControl = 0;
             _car.SteerControl = 0;
         }
