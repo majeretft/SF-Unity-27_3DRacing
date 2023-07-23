@@ -1,12 +1,11 @@
-using System;
 using UnityEngine;
 
 namespace SF3DRacing
 {
-    public class RaceInputController : MonoBehaviour
+    public class RaceInputController : MonoBehaviour, IDependency<RaceStateTracker>, IDependency<CarInputControl>
     {
-        [SerializeField] private CarInputControl _carControl;
-        [SerializeField] private RaceStateTracker _tracker;
+        private CarInputControl _carControl;
+        private RaceStateTracker _tracker;
 
         protected void Start()
         {
@@ -20,6 +19,16 @@ namespace SF3DRacing
         {
             _tracker.StartedEvent -= OnRaceStarted;
             _tracker.CompletedEvent -= OnRaceCompleted;
+        }
+
+        public void Construct(CarInputControl dependency) 
+        {
+            _carControl = dependency;
+        }
+
+        public void Construct(RaceStateTracker dependency)
+        {
+            _tracker = dependency;
         }
 
         private void OnRaceCompleted()

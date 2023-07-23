@@ -3,11 +3,12 @@ using UnityEngine.UI;
 
 namespace SF3DRacing
 {
-    public class CountdownUI : MonoBehaviour
+    public class CountdownUI : MonoBehaviour, IDependency<RaceStateTracker>
     {
         [SerializeField] private Text _text;
         [SerializeField] private Timer _timer;
-        [SerializeField] private RaceStateTracker _raceStateTracker;
+        
+        private RaceStateTracker _raceStateTracker;
 
         protected void Start()
         {
@@ -41,6 +42,11 @@ namespace SF3DRacing
 
             if (_text.text == "0")
                 _text.text = "GO!";
+        }
+
+        public void Construct(RaceStateTracker dependency)
+        {
+            _raceStateTracker = dependency;
         }
     }
 }

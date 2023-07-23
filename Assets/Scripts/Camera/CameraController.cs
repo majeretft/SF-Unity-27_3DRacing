@@ -1,17 +1,17 @@
-using System;
 using UnityEngine;
 
 namespace SF3DRacing
 {
-    public class CameraController : MonoBehaviour
+    public class CameraController : MonoBehaviour, IDependency<Car>, IDependency<RaceStateTracker>
     {
-        [SerializeField] private Car _car;
         [SerializeField] private Camera _camera;
         [SerializeField] private CameraFollow _follower;
         [SerializeField] private CameraShaker _shaker;
         [SerializeField] private CameraFovCorrector _fovCorrector;
         [SerializeField] private CameraPathFollower _pathFollower;
-        [SerializeField] private RaceStateTracker _tracker;
+        
+        private Car _car;
+        private RaceStateTracker _tracker;
 
         protected void Awake()
         {
@@ -49,6 +49,16 @@ namespace SF3DRacing
         {
             _pathFollower.enabled = false;
             _follower.enabled = true;
+        }
+
+        public void Construct(Car dependency)
+        {
+            _car = dependency;
+        }
+
+        public void Construct(RaceStateTracker dependency)
+        {
+            _tracker = dependency;
         }
     }
 }

@@ -11,7 +11,7 @@ namespace SF3DRacing
         Finished
     }
 
-    public class RaceStateTracker : MonoBehaviour
+    public class RaceStateTracker : MonoBehaviour, IDependency<TrackPointCircuit>
     {
         public event UnityAction PreparationStartedEvent;
         public event UnityAction StartedEvent;
@@ -19,10 +19,10 @@ namespace SF3DRacing
         public event UnityAction<TrackPoint> TrackPointTriggeredEvent;
         public event UnityAction<int> LapCompletedEvent;
 
-        [SerializeField] private TrackPointCircuit _trackpointCircuit;
         [SerializeField] private int _lapsToComplete;
         [SerializeField] private Timer _countdownTimer;
 
+        private TrackPointCircuit _trackpointCircuit;
         private RaceStateEnum _state;
         public RaceStateEnum State => _state;
 
@@ -56,6 +56,11 @@ namespace SF3DRacing
             _countdownTimer.enabled = true;
 
             PreparationStartedEvent?.Invoke();
+        }
+
+        public void Construct(TrackPointCircuit trackPointCircuit)
+        {
+            _trackpointCircuit = trackPointCircuit;
         }
         #endregion
 

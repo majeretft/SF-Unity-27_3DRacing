@@ -1,11 +1,9 @@
-using System;
 using UnityEngine;
 
 namespace SF3DRacing
 {
-    public class CarInputControl : MonoBehaviour
+    public class CarInputControl : MonoBehaviour, IDependency<Car>
     {
-        [SerializeField] private Car _car;
         [SerializeField] private SpeedometerUI _speedometer;
         [SerializeField] private AnimationCurve _brakeCurve;
         [SerializeField] private AnimationCurve _slowDownCurve;
@@ -15,6 +13,7 @@ namespace SF3DRacing
         [SerializeField] private bool _isPrintThrottleLog;
         [SerializeField] private bool _isPrintSteerLog;
 
+        private Car _car;
         private float _wheelSpeed;
         private float _wheelSpeedAbs;
         private float _verticalAxis;
@@ -122,6 +121,11 @@ namespace SF3DRacing
             _verticalAxis = Input.GetAxis("Vertical");
             _horizontalAxis = Input.GetAxis("Horizontal");
             _brakeAxis = Input.GetAxis("Jump");
+        }
+
+        public void Construct(Car dependency)
+        {
+            _car = dependency;
         }
     }
 }

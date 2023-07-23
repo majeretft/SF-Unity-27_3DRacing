@@ -337,6 +337,7 @@ Transform:
   - {fileID: 982970727}
   - {fileID: 2070268058}
   - {fileID: 1818101951}
+  - {fileID: 1739267082}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2040,7 +2041,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -95.272}
+  m_AnchoredPosition: {x: 0, y: -100}
   m_SizeDelta: {x: 325.1311, y: 190.54419}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &661860907
@@ -2114,7 +2115,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _text: {fileID: 661860908}
   _timer: {fileID: 1645951484}
-  _raceStateTracker: {fileID: 982970728}
 --- !u!1001 &694025211
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3223,7 +3223,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3fb02b129f705fc49b10ea1f3b087aaf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _trackpointCircuit: {fileID: 498761806}
   _lapsToComplete: 2
   _countdownTimer: {fileID: 1645951484}
 --- !u!1001 &987040035
@@ -5778,6 +5777,55 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4dd2b880cbd9c5e47a4b7d26a2daf2ab, type: 3}
+--- !u!1 &1739267081
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1739267082}
+  - component: {fileID: 1739267083}
+  m_Layer: 0
+  m_Name: SceneDependencies
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1739267082
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1739267081}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 48328714}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1739267083
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1739267081}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b15c226910cd8d8499252050fcac9fc4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _trackPointCircuit: {fileID: 498761806}
+  _cameraController: {fileID: 1851599689}
+  _raceStateTracker: {fileID: 982970728}
+  _playerCar: {fileID: 1817203601}
+  _playerCarInputControl: {fileID: 2004461806}
 --- !u!1001 &1740295953
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5975,8 +6023,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed087d259ac22184dbd3f531a917424e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _carControl: {fileID: 2004461806}
-  _tracker: {fileID: 982970728}
 --- !u!1001 &1834926584
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6332,13 +6378,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b658b27b9db94344f8de36eb207cce91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _car: {fileID: 1817203601}
   _camera: {fileID: 1851599685}
   _follower: {fileID: 1851599683}
   _shaker: {fileID: 1851599688}
   _fovCorrector: {fileID: 1851599687}
   _pathFollower: {fileID: 1851599690}
-  _tracker: {fileID: 982970728}
 --- !u!114 &1851599690
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6835,7 +6879,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8948d2a3e67039459c8a3749824c16e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _car: {fileID: 1817203601}
   _speedometer: {fileID: 384996778}
   _brakeCurve:
     serializedVersion: 2
@@ -7216,7 +7259,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4facf8bb063c3b4dbb7c8d40692c178, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _tracker: {fileID: 982970728}
 --- !u!1 &2092658153
 GameObject:
   m_ObjectHideFlags: 0
