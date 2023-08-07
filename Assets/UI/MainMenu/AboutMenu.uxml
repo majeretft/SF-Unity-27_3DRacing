@@ -1,0 +1,6 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:VisualElement name="VisualElement" style="flex-grow: 1; background-color: rgba(175, 174, 173, 0.89); align-items: center; justify-content: center; padding-top: 200px; padding-bottom: 200px;">
+        <ui:Label tabindex="-1" text="Racing project" display-tooltip-when-elided="true" style="font-size: 50px; -unity-font-definition: url(&apos;project://database/Assets/Fonts/Orbitron-Headers/static/Orbitron-Bold%20SDF.asset?fileID=11400000&amp;guid=74aa99e30a547ab45951d044f3248da0&amp;type=2#Orbitron-Bold SDF&apos;);" />
+        <ui:Label tabindex="-1" text="@iris-racer" display-tooltip-when-elided="true" style="-unity-font-definition: url(&apos;project://database/Assets/Fonts/Libre_Barcode_39_Extended_Text-Branding/LibreBarcode39ExtendedText-Regular%20SDF.asset?fileID=11400000&amp;guid=e9f73fe32d2b1b24dae421d5436b3242&amp;type=2#LibreBarcode39ExtendedText-Regular SDF&apos;); font-size: 80px;" />
+    </ui:VisualElement>
+</ui:UXML>

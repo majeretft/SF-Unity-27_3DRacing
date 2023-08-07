@@ -1,0 +1,36 @@
+.main {
+    display: flex;
+    flex-grow: 1;
+    background-color: rgba(0, 0, 0, 0);
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 10%;
+    padding-bottom: 10%;
+    justify-content: center;
+    align-items: center;
+    -unity-font-definition: url('project://database/Assets/Fonts/Libre_Barcode_39_Extended_Text-Branding/LibreBarcode39ExtendedText-Regular%20SDF.asset?fileID=11400000&guid=e9f73fe32d2b1b24dae421d5436b3242&type=2#LibreBarcode39ExtendedText-Regular SDF');
+    -unity-font-style: normal;
+    background-image: url('project://database/Assets/Images/MenuBg.png?fileID=2800000&guid=877736560f1c0494080bcbd029828e00&type=3#MenuBg');
+    -unity-background-scale-mode: scale-and-crop;
+}
+
+.game-button {
+    background-color: rgb(255, 255, 255);
+    border-left-width: 2px;
+    border-right-width: 2px;
+    border-top-width: 2px;
+    border-bottom-width: 2px;
+    border-top-left-radius: 100%;
+    border-bottom-left-radius: 100%;
+    border-top-right-radius: 100%;
+    border-bottom-right-radius: 100%;
+    width: 200px;
+    height: 200px;
+    border-left-color: rgb(45, 137, 212);
+    border-right-color: rgb(45, 137, 212);
+    border-top-color: rgb(45, 137, 212);
+    border-bottom-color: rgb(45, 137, 212);
+    font-size: 30px;
+    color: rgb(45, 137, 212);
+    -unity-font-style: bold;
+}
