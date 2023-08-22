@@ -40,6 +40,11 @@
     border-right-color: rgb(255, 18, 0);
 }
 
+.menu-button.active {
+    background-color: rgb(235, 235, 235);
+    border-right-color: rgb(255, 18, 0);
+}
+
 .track-image {
     width: 300px;
     height: 200px;
@@ -174,40 +179,69 @@
 }
 
 .tracks-section {
-    transition-property: translate, opacity;
-    transition-duration: 0.25s, 0.15s;
-    transition-delay: 0.1s, 0.1s;
+    transition-property: top, opacity, display;
+    transition-duration: 0.25s, 0.15s, 0s;
+    transition-delay: 0.1s, 0.1s, 0;
     opacity: 0;
-    translate: 0 -200px;
+    position: absolute;
+    left: 0;
+    top: -100%;
+    right: 0;
+    bottom: 0;
+    transition-timing-function: ease, ease, linear;
+    display: none;
 }
 
 .settings-section {
-    transition-property: translate, opacity;
-    transition-duration: 0.25s, 0.15s;
-    transition-delay: 0.1s, 0.1s;
+    transition-property: top, opacity, display;
+    transition-duration: 0.25s, 0.15s, 0s;
+    transition-delay: 0.1s, 0.1s, 0;
     opacity: 0;
-    translate: 0 0;
+    position: relative;
+    left: 0;
+    top: -100%;
+    right: 0;
+    bottom: 0;
+    transition-timing-function: ease, ease, linear;
+    display: none;
 }
 
 .about-section {
-    transition-property: translate, opacity;
-    transition-duration: 0.25s, 0.15s;
-    transition-delay: 0.1s, 0.1s;
+    transition-property: top, opacity, display;
+    transition-duration: 0.25s, 0.15s, 0s;
+    transition-delay: 0.1s, 0.1s, 0;
     opacity: 0;
-    translate: 0 0;
+    position: absolute;
+    left: 0;
+    top: -100%;
+    right: 0;
+    bottom: 0;
+    transition-timing-function: ease, ease, linear;
+    display: none;
 }
 
 .tracks-section.in {
     opacity: 1;
-    translate: 0 0;
+    top: 0;
+    display: flex;
 }
 
 .settings-section.in {
     opacity: 1;
-    translate: 0 -115%;
+    top: 0;
+    display: flex;
 }
 
 .about-section.in {
     opacity: 1;
-    translate: 0 -243%;
+    top: 0;
+    display: flex;
+}
+
+.test {
+    background-color: rgb(0, 0, 0);
+}
+
+.test:hover {
+    background-color: rgb(0, 255, 0);
 }

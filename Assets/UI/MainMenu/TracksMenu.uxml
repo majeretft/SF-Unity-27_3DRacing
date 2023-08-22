@@ -1,6 +1,6 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="project://database/Assets/UI/MainMenu/MenuStyles.uss?fileID=7433441132597879392&amp;guid=7e8e30bfa9b20be4c8d0fe7a02609a4d&amp;type=3#MenuStyles" />
-    <ui:VisualElement name="track-wrapper" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); flex-wrap: wrap;">
+    <ui:VisualElement name="track-wrapper" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); flex-wrap: wrap; flex-direction: row;">
         <ui:VisualElement name="track-container" class="track-container">
             <ui:Image name="track-image" class="track-image" style="--unity-image: url(&apos;project://database/Assets/Images/placeholder_600x400.png?fileID=21300000&amp;guid=ec249def680c3c5418559968d0a84062&amp;type=3#placeholder_600x400&apos;);">
                 <ui:Label tabindex="-1" text="Label" display-tooltip-when-elided="true" name="track-name" class="track-name" />

@@ -1,25 +1,25 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <ui:Template name="TracksMenu" src="project://database/Assets/UI/MainMenu/TracksMenu.uxml?fileID=9197481963319205126&amp;guid=d6298b24b3cb2a640bd38644fdaaad96&amp;type=3#TracksMenu" />
     <ui:Template name="SettingsMenu" src="project://database/Assets/UI/MainMenu/SettingsMenu.uxml?fileID=9197481963319205126&amp;guid=41605dd53a6a25a448de1e8ce44ef8c1&amp;type=3#SettingsMenu" />
-    <ui:Template name="AboutMenu" src="project://database/Assets/UI/MainMenu/AboutMenu.uxml?fileID=9197481963319205126&amp;guid=8b36ff5df437d1447a83c231321ccc36&amp;type=3#AboutMenu" />
+    <ui:Template name="AboutMenu" src="project://database/Assets/UI/MainMenu/AboutMenu%20fsdfsd.uxml?fileID=9197481963319205126&amp;guid=8b36ff5df437d1447a83c231321ccc36&amp;type=3#AboutMenu fsdfsd" />
     <Style src="project://database/Assets/UI/MainMenu/MenuStyles.uss?fileID=7433441132597879392&amp;guid=7e8e30bfa9b20be4c8d0fe7a02609a4d&amp;type=3#MenuStyles" />
     <ui:VisualElement name="bg-image" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); background-image: url(&apos;project://database/Assets/Images/MenuBg.png?fileID=2800000&amp;guid=877736560f1c0494080bcbd029828e00&amp;type=3#MenuBg&apos;); -unity-background-scale-mode: scale-and-crop; position: absolute; left: 0; top: 0; right: 0; bottom: 0;" />
     <ui:VisualElement name="root" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); padding-left: 0; padding-right: 0; padding-top: 5%; padding-bottom: 5%;">
         <ui:VisualElement name="container-rotated" style="flex-grow: 1; rotate: -10deg;">
             <ui:VisualElement name="bg-ditter" style="flex-grow: 1; position: absolute; left: -20%; top: 0; right: -20%; bottom: 0; background-image: url(&apos;project://database/Assets/Images/MenuBgDitter.png?fileID=2800000&amp;guid=dfc5486119ac07f42926259a33844a30&amp;type=3#MenuBgDitter&apos;); -unity-background-scale-mode: scale-and-crop; background-color: rgba(0, 0, 0, 0.2);" />
-            <ui:VisualElement style="flex-grow: 0; background-color: rgba(0, 0, 0, 0); position: absolute; left: 180px; top: -111px; flex-direction: row; align-items: center; justify-content: flex-start;">
+            <ui:VisualElement name="VisualElement" style="flex-grow: 0; background-color: rgba(0, 0, 0, 0); position: absolute; left: 180px; top: -111px; flex-direction: row; align-items: center; justify-content: flex-start;">
                 <ui:Label tabindex="-1" text="ON THE" display-tooltip-when-elided="true" style="color: rgb(255, 255, 255); width: 84px; white-space: normal; -unity-text-align: upper-right; font-size: 34px; margin-right: 21px; -unity-font-definition: url(&apos;project://database/Assets/Fonts/Orbitron-Headers/static/Orbitron-Regular%20SDF.asset?fileID=11400000&amp;guid=d8d2a38b2db448f4aa8c39f3e32b2acb&amp;type=2#Orbitron-Regular SDF&apos;); margin-left: 0; margin-top: 0; margin-bottom: 0;" />
                 <ui:Label tabindex="-1" text="3D Racing" display-tooltip-when-elided="true" style="font-size: 96px; -unity-font-definition: url(&apos;project://database/Assets/Fonts/Orbitron-Headers/static/Orbitron-Bold%20SDF.asset?fileID=11400000&amp;guid=74aa99e30a547ab45951d044f3248da0&amp;type=2#Orbitron-Bold SDF&apos;); color: rgb(255, 255, 255); margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0;" />
             </ui:VisualElement>
-            <ui:VisualElement name="columns" style="flex-grow: 1; flex-direction: row; margin-left: 2.5%;">
-                <ui:VisualElement name="col-left" style="flex-grow: 1; padding-left: 2.5%; padding-right: 2.5%; padding-top: 2.5%; padding-bottom: 2.5%; overflow: visible;">
+            <ui:VisualElement name="columns" style="flex-grow: 1; flex-direction: row; margin-left: 2.5%; align-items: stretch;">
+                <ui:VisualElement name="col-left" style="flex-grow: 1; padding-left: 2.5%; padding-right: 2.5%; padding-top: 2.5%; padding-bottom: 2.5%; overflow: visible; align-self: stretch; flex-direction: column;">
                     <ui:VisualElement name="header" style="flex-grow: 0; height: 20%; justify-content: center; align-items: stretch;">
                         <ui:Label tabindex="-1" text="Tracks" display-tooltip-when-elided="true" name="text" class="menu-header" />
                     </ui:VisualElement>
-                    <ui:VisualElement name="content" style="flex-grow: 0; flex-wrap: wrap; flex-direction: row; overflow: visible;">
+                    <ui:VisualElement name="inner-menu-container" style="flex-grow: 1; flex-wrap: wrap; flex-direction: row; overflow: visible; align-self: stretch;">
                         <ui:Instance template="TracksMenu" name="TracksMenu" class="tracks-section in" style="width: 100%;" />
-                        <ui:Instance template="SettingsMenu" name="SettingsMenu" class="settings-section" style="width: 100%;" />
-                        <ui:Instance template="AboutMenu" name="AboutMenu" class="about-section" style="width: 100%; translate: 0 -208%;" />
+                        <ui:Instance template="SettingsMenu" name="SettingsMenu" class="settings-section" style="width: 100%; position: absolute;" />
+                        <ui:Instance template="AboutMenu" name="AboutMenu" class="about-section" />
                     </ui:VisualElement>
                 </ui:VisualElement>
                 <ui:VisualElement name="col-right" style="flex-grow: 0; flex-shrink: 0; padding-left: 2.5%; padding-right: 5%; padding-top: 2.5%; padding-bottom: 2.5%; width: 30%;">
