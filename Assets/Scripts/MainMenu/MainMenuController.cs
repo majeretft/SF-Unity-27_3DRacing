@@ -9,6 +9,9 @@ namespace SF3DRacing
         [SerializeField]
         private UIDocument _uIDocument;
 
+        [SerializeField]
+        private MenuSfx _sfx;
+
         private List<VisualElement> _innerMenus = new();
         private List<Button> _mainButtons = new();
 
@@ -24,6 +27,11 @@ namespace SF3DRacing
             aboutMenuBtn.RegisterCallback<ClickEvent>(OnMainMenuButtonClicked);
             quitMenuBtn.RegisterCallback<ClickEvent>(OnMainMenuButtonClicked);
 
+            tracksMenuBtn.RegisterCallback<MouseEnterEvent>(OnMouseEnterEvent);
+            settingsMenuBtn.RegisterCallback<MouseEnterEvent>(OnMouseEnterEvent);
+            aboutMenuBtn.RegisterCallback<MouseEnterEvent>(OnMouseEnterEvent);
+            quitMenuBtn.RegisterCallback<MouseEnterEvent>(OnMouseEnterEvent);
+
             _mainButtons.Add(tracksMenuBtn);
             _mainButtons.Add(settingsMenuBtn);
             _mainButtons.Add(aboutMenuBtn);
@@ -34,6 +42,11 @@ namespace SF3DRacing
                 .Query()
                 .Children<VisualElement>()
                 .ToList();
+        }
+
+        private void OnMouseEnterEvent(MouseEnterEvent e)
+        {
+            _sfx.PlaySound(MenuActions.Hover);
         }
 
         private void OnMainMenuButtonClicked(ClickEvent e)
@@ -47,6 +60,8 @@ namespace SF3DRacing
             foreach (var menu in _mainButtons)
                 menu.RemoveFromClassList("active");
 
+            _sfx.PlaySound(MenuActions.ButtonClick);
+            
             switch (el.name)
             {
                 case "tracks-button":
