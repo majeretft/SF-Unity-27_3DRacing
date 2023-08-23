@@ -2,28 +2,28 @@
     <Style src="project://database/Assets/UI/MainMenu/MenuStyles.uss?fileID=7433441132597879392&amp;guid=7e8e30bfa9b20be4c8d0fe7a02609a4d&amp;type=3#MenuStyles" />
     <ui:VisualElement name="track-wrapper" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); flex-wrap: wrap; flex-direction: row;">
         <ui:VisualElement name="track-container" class="track-container">
-            <ui:Image name="track-image" class="track-image" style="--unity-image: url(&apos;project://database/Assets/Images/placeholder_600x400.png?fileID=21300000&amp;guid=ec249def680c3c5418559968d0a84062&amp;type=3#placeholder_600x400&apos;);">
-                <ui:Label tabindex="-1" text="Label" display-tooltip-when-elided="true" name="track-name" class="track-name" />
+            <ui:Image name="track-image" class="track-image" style="--unity-image: url(&apos;project://database/Assets/Images/track-sample.jpg?fileID=21300000&amp;guid=5693e4a5b5067564e91bad52e7a64e85&amp;type=3#track-sample&apos;);">
+                <ui:Label tabindex="-1" text="Sample track" display-tooltip-when-elided="true" name="track-name" class="track-name" />
             </ui:Image>
-            <ui:Button text="GO!" display-tooltip-when-elided="true" name="track-button" class="track-button" />
+            <ui:Button text="GO!" display-tooltip-when-elided="true" name="track-button" class="track-button track-1" />
         </ui:VisualElement>
         <ui:VisualElement name="track-container" class="track-container">
             <ui:Image name="track-image" class="track-image" style="--unity-image: url(&apos;project://database/Assets/Images/placeholder_600x400.png?fileID=21300000&amp;guid=ec249def680c3c5418559968d0a84062&amp;type=3#placeholder_600x400&apos;);">
-                <ui:Label tabindex="-1" text="Label" display-tooltip-when-elided="true" name="track-name" class="track-name" />
+                <ui:Label tabindex="-1" text="Track #1" display-tooltip-when-elided="true" name="track-name" class="track-name" />
             </ui:Image>
-            <ui:Button text="GO!" display-tooltip-when-elided="true" name="track-button" class="track-button" />
+            <ui:Button text="GO!" display-tooltip-when-elided="true" name="track-button" class="track-button track-2" />
         </ui:VisualElement>
         <ui:VisualElement name="track-container" class="track-container">
             <ui:Image name="track-image" class="track-image" style="--unity-image: url(&apos;project://database/Assets/Images/placeholder_600x400.png?fileID=21300000&amp;guid=ec249def680c3c5418559968d0a84062&amp;type=3#placeholder_600x400&apos;);">
-                <ui:Label tabindex="-1" text="Label" display-tooltip-when-elided="true" name="track-name" class="track-name" />
+                <ui:Label tabindex="-1" text="Track #2" display-tooltip-when-elided="true" name="track-name" class="track-name" />
             </ui:Image>
-            <ui:Button text="GO!" display-tooltip-when-elided="true" name="track-button" class="track-button" />
+            <ui:Button text="GO!" display-tooltip-when-elided="true" name="track-button" class="track-button track-3" />
         </ui:VisualElement>
         <ui:VisualElement name="track-container" class="track-container">
             <ui:Image name="track-image" class="track-image" style="--unity-image: url(&apos;project://database/Assets/Images/placeholder_600x400.png?fileID=21300000&amp;guid=ec249def680c3c5418559968d0a84062&amp;type=3#placeholder_600x400&apos;);">
-                <ui:Label tabindex="-1" text="Label" display-tooltip-when-elided="true" name="track-name" class="track-name" />
+                <ui:Label tabindex="-1" text="Track #3" display-tooltip-when-elided="true" name="track-name" class="track-name" />
             </ui:Image>
-            <ui:Button text="GO!" display-tooltip-when-elided="true" name="track-button" class="track-button" />
+            <ui:Button text="GO!" display-tooltip-when-elided="true" name="track-button" class="track-button track-4" />
         </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>
