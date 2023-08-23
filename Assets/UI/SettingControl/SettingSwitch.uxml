@@ -1,0 +1,17 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/SettingControl/SettingSwitch.uss?fileID=7433441132597879392&amp;guid=8675b0e5d75bf274ca76a8b3c00fbc4a&amp;type=3#SettingSwitch" />
+    <SF3DRacing.SettingSwitch style="align-self: stretch;">
+        <ui:VisualElement name="setting-row" class="setting-row">
+            <ui:VisualElement name="setting-col" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); width: 50%;">
+                <ui:Label tabindex="-1" text="Display resolution" display-tooltip-when-elided="true" name="setting-name" class="settins-name" />
+            </ui:VisualElement>
+            <ui:VisualElement name="setting-col" class="setting-col" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); width: 50%; height: 35px;">
+                <ui:VisualElement style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); flex-direction: row; justify-content: space-between; align-items: center;">
+                    <ui:Image name="prev" class="icon" style="--unity-image: url(&apos;project://database/Assets/Images/icon-left.png?fileID=2800000&amp;guid=35c6b194a1e1c7a4796b9950901fe0fe&amp;type=3#icon-left&apos;);" />
+                    <ui:Label tabindex="-1" text="1920x1080" display-tooltip-when-elided="true" name="setting-value" style="-unity-text-align: upper-center; font-size: 24px; -unity-font-definition: url(&apos;project://database/Assets/Fonts/Orbitron-Headers/static/Orbitron-Regular%20SDF.asset?fileID=11400000&amp;guid=d8d2a38b2db448f4aa8c39f3e32b2acb&amp;type=2#Orbitron-Regular SDF&apos;); margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0;" />
+                    <ui:Image name="next" class="icon" style="--unity-image: url(&apos;project://database/Assets/Images/icon-right.png?fileID=2800000&amp;guid=511ee4682fc92bc428664d11916c61b6&amp;type=3#icon-right&apos;);" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </SF3DRacing.SettingSwitch>
+</ui:UXML>

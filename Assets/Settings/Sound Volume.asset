@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83a04541d4b4be843b9ae504a805f8c9, type: 3}
   m_Name: Sound Volume
   m_EditorClassIdentifier: 
+  _guiTemplate: {fileID: 9197481963319205126, guid: e7947995660091b469e0b9d70dbcfe7c, type: 3}
   Title: Sound Volume
   _audioMixer: {fileID: 24100000, guid: 1227d5a6494667b4385d69157f060263, type: 2}
   _mixerParameterName: SFX Volume

@@ -492,6 +492,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _uIDocumentRoot: {fileID: 196847595}
   _sfx: {fileID: 10029684}
+  _settingItems:
+  - {fileID: 11400000, guid: 1c048a2ca1f9a774fa58741735dfe7e0, type: 2}
+  - {fileID: 11400000, guid: 962c96e3d7a24724fb6edf350a3c228a, type: 2}
+  - {fileID: 11400000, guid: d2307c678430c564b965f0652e730ced, type: 2}
+  - {fileID: 11400000, guid: 421d19f704dc3b247b0d709aec8ab793, type: 2}
+  - {fileID: 11400000, guid: c791c08c3d405074980fec347e79c6fa, type: 2}
 --- !u!114 &196847599
 MonoBehaviour:
   m_ObjectHideFlags: 0

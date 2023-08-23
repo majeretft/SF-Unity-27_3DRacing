@@ -1,9 +1,14 @@
 using UnityEngine;
+using UnityEngine.UIElements;
 
 namespace SF3DRacing
 {
     public abstract class SettingBase : ScriptableObject
     {
+        [SerializeField]
+        private VisualTreeAsset _guiTemplate;
+        public VisualTreeAsset GuiTemplate => _guiTemplate;
+        
         public string Title;
 
         public virtual bool IsMinValue { get; set; }

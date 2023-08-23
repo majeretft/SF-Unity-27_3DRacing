@@ -13,32 +13,43 @@ namespace SF3DRacing
         [SerializeField]
         private MenuSfx _sfx;
 
+        [SerializeField]
+        private List<SettingBase> _settingItems;
+
         private void Start()
         {
             var menuSection = _uIDocumentRoot.rootVisualElement.Q<VisualElement>("SettingsMenu");
+            var wrapper = menuSection.Q<VisualElement>("settings-wrapper");
 
-            var menuRows = menuSection
-                .Q<VisualElement>("settings-wrapper")
-                .Query()
-                .Children<VisualElement>("setting-row")
-                .ToList();
+            // var menuRows = wrapper
+            //     .Query()
+            //     .Children<VisualElement>("setting-row")
+            //     .ToList();
 
-            foreach (var obj in menuRows)
-                obj.RegisterCallback<MouseEnterEvent>(OnMouseEnterEvent);
+            // foreach (var obj in menuRows)
+            //     obj.RegisterCallback<MouseEnterEvent>(OnMouseEnterEvent);
 
-            var menuButtons = menuSection
-                .Q<VisualElement>("settings-wrapper")
-                .Query()
-                .Children<VisualElement>("track-image")
-                .ToList();
+            // var menuButtons = wrapper
+            //     .Query()
+            //     .Children<VisualElement>("track-image")
+            //     .ToList();
 
-            foreach (var obj in menuButtons)
-                obj.RegisterCallback<ClickEvent>(OnMouseClickEvent);
+            // foreach (var obj in menuButtons)
+            //     obj.RegisterCallback<ClickEvent>(OnMouseClickEvent);
 
-            menuSection
-                .Q<VisualElement>("settings-wrapper")
-                .Q("reset-saves-button")
-                .RegisterCallback<ClickEvent>(OnMouseClickEvent);
+            var resetButton = wrapper.Q("reset-saves-button");
+            resetButton.RegisterCallback<ClickEvent>(OnMouseClickEvent);
+            resetButton.RegisterCallback<MouseEnterEvent>(OnMouseEnterEvent);
+
+            foreach (var item in _settingItems)
+            {
+                item.Load();
+                var template = item.GuiTemplate;
+                var templateContainer = template.Instantiate();
+                var settingSwitch = templateContainer.Q<SettingSwitch>();
+                wrapper.Insert(wrapper.childCount - 1, settingSwitch);
+                settingSwitch.Init(item, _sfx);
+            }
         }
 
         private void OnMouseClickEvent(ClickEvent e)

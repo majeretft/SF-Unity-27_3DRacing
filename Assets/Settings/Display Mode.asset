@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 098fc622974462f4eb7928433540f27e, type: 3}
   m_Name: Display Mode
   m_EditorClassIdentifier: 
+  _guiTemplate: {fileID: 9197481963319205126, guid: e7947995660091b469e0b9d70dbcfe7c, type: 3}
   Title: Display mode
   _modes:
   - Exclusive Full Screen

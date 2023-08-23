@@ -1,66 +1,6 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="project://database/Assets/UI/MainMenu/MenuStyles.uss?fileID=7433441132597879392&amp;guid=7e8e30bfa9b20be4c8d0fe7a02609a4d&amp;type=3#MenuStyles" />
     <ui:VisualElement name="settings-wrapper" style="flex-grow: 1; background-color: rgba(175, 174, 173, 0.89); flex-wrap: wrap; padding-left: 0; padding-right: 0; padding-top: 50px; padding-bottom: 50px; align-items: center; justify-content: center;">
-        <ui:VisualElement name="setting-row" class="setting-row">
-            <ui:VisualElement name="setting-col" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); width: 50%;">
-                <ui:Label tabindex="-1" text="Display resolution" display-tooltip-when-elided="true" name="setting-name" class="settins-name" />
-            </ui:VisualElement>
-            <ui:VisualElement name="setting-col" class="setting-col" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); width: 50%; height: 35px;">
-                <ui:VisualElement style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); flex-direction: row; justify-content: space-between; align-items: center;">
-                    <ui:Image name="track-image" class="icon" style="--unity-image: url(project:/Assets/Images/icon-left.png);" />
-                    <ui:Label tabindex="-1" text="1920x1080" display-tooltip-when-elided="true" name="setting-value" style="-unity-text-align: upper-center; font-size: 24px; -unity-font-definition: url(&apos;project://database/Assets/Fonts/Orbitron-Headers/static/Orbitron-Regular%20SDF.asset?fileID=11400000&amp;guid=d8d2a38b2db448f4aa8c39f3e32b2acb&amp;type=2#Orbitron-Regular SDF&apos;); margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0;" />
-                    <ui:Image name="track-image" class="icon" style="--unity-image: url(&apos;project://database/Assets/Images/icon-right.png?fileID=21300000&amp;guid=511ee4682fc92bc428664d11916c61b6&amp;type=3#icon-right&apos;);" />
-                </ui:VisualElement>
-            </ui:VisualElement>
-        </ui:VisualElement>
-        <ui:VisualElement name="setting-row" class="setting-row">
-            <ui:VisualElement name="setting-col" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); width: 50%;">
-                <ui:Label tabindex="-1" text="Display mode" display-tooltip-when-elided="true" name="setting-name" enable-rich-text="true" class="settins-name" />
-            </ui:VisualElement>
-            <ui:VisualElement name="setting-col" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); width: 50%;">
-                <ui:VisualElement style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); flex-direction: row; justify-content: space-between; align-items: center;">
-                    <ui:Image name="track-image" class="icon" style="--unity-image: url(&apos;project://database/Assets/Images/icon-left.png?fileID=21300000&amp;guid=35c6b194a1e1c7a4796b9950901fe0fe&amp;type=3#icon-left&apos;);" />
-                    <ui:Label tabindex="-1" text="Full window" display-tooltip-when-elided="true" name="setting-value" style="-unity-text-align: upper-center; font-size: 24px; -unity-font-definition: url(&apos;project://database/Assets/Fonts/Orbitron-Headers/static/Orbitron-Regular%20SDF.asset?fileID=11400000&amp;guid=d8d2a38b2db448f4aa8c39f3e32b2acb&amp;type=2#Orbitron-Regular SDF&apos;); margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0;" />
-                    <ui:Image name="track-image" class="icon" style="--unity-image: url(&apos;project://database/Assets/Images/icon-right.png?fileID=21300000&amp;guid=511ee4682fc92bc428664d11916c61b6&amp;type=3#icon-right&apos;);" />
-                </ui:VisualElement>
-            </ui:VisualElement>
-        </ui:VisualElement>
-        <ui:VisualElement name="setting-row" class="setting-row">
-            <ui:VisualElement name="setting-col" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); width: 50%;">
-                <ui:Label tabindex="-1" text="Master Volume" display-tooltip-when-elided="true" name="setting-name" class="settins-name" />
-            </ui:VisualElement>
-            <ui:VisualElement name="setting-col" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); width: 50%;">
-                <ui:VisualElement style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); flex-direction: row; justify-content: space-between; align-items: center;">
-                    <ui:Image name="track-image" class="icon" style="--unity-image: url(&apos;project://database/Assets/Images/icon-left.png?fileID=21300000&amp;guid=35c6b194a1e1c7a4796b9950901fe0fe&amp;type=3#icon-left&apos;);" />
-                    <ui:Label tabindex="-1" text="100" display-tooltip-when-elided="true" name="setting-value" style="-unity-text-align: upper-center; font-size: 24px; -unity-font-definition: url(&apos;project://database/Assets/Fonts/Orbitron-Headers/static/Orbitron-Regular%20SDF.asset?fileID=11400000&amp;guid=d8d2a38b2db448f4aa8c39f3e32b2acb&amp;type=2#Orbitron-Regular SDF&apos;); margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0;" />
-                    <ui:Image name="track-image" class="icon" style="--unity-image: url(&apos;project://database/Assets/Images/icon-right.png?fileID=21300000&amp;guid=511ee4682fc92bc428664d11916c61b6&amp;type=3#icon-right&apos;);" />
-                </ui:VisualElement>
-            </ui:VisualElement>
-        </ui:VisualElement>
-        <ui:VisualElement name="setting-row" class="setting-row">
-            <ui:VisualElement name="setting-col" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); width: 50%;">
-                <ui:Label tabindex="-1" text="Music Volume" display-tooltip-when-elided="true" name="setting-name" class="settins-name" />
-            </ui:VisualElement>
-            <ui:VisualElement name="setting-col" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); width: 50%;">
-                <ui:VisualElement style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); flex-direction: row; justify-content: space-between; align-items: center;">
-                    <ui:Image name="track-image" class="icon" style="--unity-image: url(&apos;project://database/Assets/Images/icon-left.png?fileID=21300000&amp;guid=35c6b194a1e1c7a4796b9950901fe0fe&amp;type=3#icon-left&apos;);" />
-                    <ui:Label tabindex="-1" text="100" display-tooltip-when-elided="true" name="setting-value" style="-unity-text-align: upper-center; font-size: 24px; -unity-font-definition: url(&apos;project://database/Assets/Fonts/Orbitron-Headers/static/Orbitron-Regular%20SDF.asset?fileID=11400000&amp;guid=d8d2a38b2db448f4aa8c39f3e32b2acb&amp;type=2#Orbitron-Regular SDF&apos;); margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0;" />
-                    <ui:Image name="track-image" class="icon" style="--unity-image: url(&apos;project://database/Assets/Images/icon-right.png?fileID=21300000&amp;guid=511ee4682fc92bc428664d11916c61b6&amp;type=3#icon-right&apos;);" />
-                </ui:VisualElement>
-            </ui:VisualElement>
-        </ui:VisualElement>
-        <ui:VisualElement name="setting-row" class="setting-row">
-            <ui:VisualElement name="setting-col" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); width: 50%;">
-                <ui:Label tabindex="-1" text="Sound Volume" display-tooltip-when-elided="true" name="setting-name" class="settins-name" />
-            </ui:VisualElement>
-            <ui:VisualElement name="setting-col" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); width: 50%;">
-                <ui:VisualElement style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); flex-direction: row; justify-content: space-between; align-items: center;">
-                    <ui:Image name="track-image" class="icon" style="--unity-image: url(&apos;project://database/Assets/Images/icon-left.png?fileID=21300000&amp;guid=35c6b194a1e1c7a4796b9950901fe0fe&amp;type=3#icon-left&apos;);" />
-                    <ui:Label tabindex="-1" text="100" display-tooltip-when-elided="true" name="setting-value" style="-unity-text-align: upper-center; font-size: 24px; -unity-font-definition: url(&apos;project://database/Assets/Fonts/Orbitron-Headers/static/Orbitron-Regular%20SDF.asset?fileID=11400000&amp;guid=d8d2a38b2db448f4aa8c39f3e32b2acb&amp;type=2#Orbitron-Regular SDF&apos;); margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0;" />
-                    <ui:Image name="track-image" class="icon" style="--unity-image: url(&apos;project://database/Assets/Images/icon-right.png?fileID=21300000&amp;guid=511ee4682fc92bc428664d11916c61b6&amp;type=3#icon-right&apos;);" />
-                </ui:VisualElement>
-            </ui:VisualElement>
-        </ui:VisualElement>
         <ui:VisualElement name="setting-row" class="setting-button-row">
             <ui:VisualElement name="setting-col" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); width: 50%;" />
             <ui:VisualElement name="setting-col" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); width: 50%;">

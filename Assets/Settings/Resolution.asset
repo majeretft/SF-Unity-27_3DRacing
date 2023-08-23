@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc92353eb43758a44a3f149eb5fd9c55, type: 3}
   m_Name: Resolution
   m_EditorClassIdentifier: 
+  _guiTemplate: {fileID: 9197481963319205126, guid: e7947995660091b469e0b9d70dbcfe7c, type: 3}
   Title: Display resolution
   _resolutions:
   - {x: 1920, y: 1080}

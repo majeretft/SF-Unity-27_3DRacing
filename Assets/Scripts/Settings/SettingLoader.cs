@@ -11,6 +11,13 @@ namespace SF3DRacing
             foreach (var setting in _settings)
             {
                 setting.Load();
+            }
+        }
+
+        private void Start()
+        {
+            foreach (var setting in _settings)
+            {
                 setting.Apply();
             }
         }
