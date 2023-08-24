@@ -14,4 +14,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/UIToolkitScene.unity
     guid: 171c4caf1f412044f894110c60e35844
+  - enabled: 1
+    path: Assets/Scenes/Track-0.unity
+    guid: 8197fb70a524f8748bb09aa019bc2c84
+  - enabled: 1
+    path: Assets/Scenes/Track-1.unity
+    guid: db98693d3c6c4f74494baa9bed01245c
+  - enabled: 1
+    path: Assets/Scenes/Track-2.unity
+    guid: 16f5e55869c28894ba1000d50f838c35
   m_configObjects: {}

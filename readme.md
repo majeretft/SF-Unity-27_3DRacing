@@ -12,3 +12,6 @@ Used fonts:
 2. Chakra Petch
 3. Orbitron
 (Google fonts)
+
+Menu music - Shadow warrior (main theme)
+Engine sound from NFS Underground

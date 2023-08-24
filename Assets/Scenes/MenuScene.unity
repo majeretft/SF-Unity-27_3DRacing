@@ -329,11 +329,11 @@ MonoBehaviour:
   - TrackName: track-1
     SceneName: SampleScene
   - TrackName: track-2
-    SceneName: SampleScene
+    SceneName: Track-0
   - TrackName: track-3
-    SceneName: SampleScene
+    SceneName: Track-1
   - TrackName: track-4
-    SceneName: SampleScene
+    SceneName: Track-2
 --- !u!1 &1547627630
 GameObject:
   m_ObjectHideFlags: 0

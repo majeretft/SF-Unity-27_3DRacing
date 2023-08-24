@@ -8,19 +8,19 @@
             <ui:Button text="GO!" display-tooltip-when-elided="true" name="track-button" class="track-button track-1" />
         </ui:VisualElement>
         <ui:VisualElement name="track-container" class="track-container">
-            <ui:Image name="track-image" class="track-image" style="--unity-image: url(&apos;project://database/Assets/Images/placeholder_600x400.png?fileID=21300000&amp;guid=ec249def680c3c5418559968d0a84062&amp;type=3#placeholder_600x400&apos;);">
+            <ui:Image name="track-image" class="track-image" style="--unity-image: url(/Assets/Images/track-0.jpg);">
                 <ui:Label tabindex="-1" text="Track #1" display-tooltip-when-elided="true" name="track-name" class="track-name" />
             </ui:Image>
             <ui:Button text="GO!" display-tooltip-when-elided="true" name="track-button" class="track-button track-2" />
         </ui:VisualElement>
         <ui:VisualElement name="track-container" class="track-container">
-            <ui:Image name="track-image" class="track-image" style="--unity-image: url(&apos;project://database/Assets/Images/placeholder_600x400.png?fileID=21300000&amp;guid=ec249def680c3c5418559968d0a84062&amp;type=3#placeholder_600x400&apos;);">
+            <ui:Image name="track-image" class="track-image" style="--unity-image: url(/Assets/Images/track-1.jpg);">
                 <ui:Label tabindex="-1" text="Track #2" display-tooltip-when-elided="true" name="track-name" class="track-name" />
             </ui:Image>
             <ui:Button text="GO!" display-tooltip-when-elided="true" name="track-button" class="track-button track-3" />
         </ui:VisualElement>
         <ui:VisualElement name="track-container" class="track-container">
-            <ui:Image name="track-image" class="track-image" style="--unity-image: url(&apos;project://database/Assets/Images/placeholder_600x400.png?fileID=21300000&amp;guid=ec249def680c3c5418559968d0a84062&amp;type=3#placeholder_600x400&apos;);">
+            <ui:Image name="track-image" class="track-image" style="--unity-image: url(/Assets/Images/track-2.jpg);">
                 <ui:Label tabindex="-1" text="Track #3" display-tooltip-when-elided="true" name="track-name" class="track-name" />
             </ui:Image>
             <ui:Button text="GO!" display-tooltip-when-elided="true" name="track-button" class="track-button track-4" />
