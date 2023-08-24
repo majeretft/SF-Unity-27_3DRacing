@@ -39,5 +39,14 @@ namespace SF3DRacing
 
             _audioSource.PlayOneShot(sound);
         }
+
+        public void PlayHoverSound()
+        {
+            var sound = _soundsMap.Where(x => x.action == MenuActions.Hover).Select(x => x.sound).FirstOrDefault();
+            if (!sound)
+                return;
+
+            _audioSource.PlayOneShot(sound);
+        }
     }
 }

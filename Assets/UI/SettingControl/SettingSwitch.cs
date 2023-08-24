@@ -44,6 +44,12 @@ namespace SF3DRacing
             _setting.SetPrevValue();
             _setting.Apply();
 
+            _next.RemoveFromClassList("muted");
+            if (_setting.IsMinValue)
+                _prev.AddToClassList("muted");
+            else
+                _prev.RemoveFromClassList("muted");
+
             _settingValue.text = _setting.GetStringValue();
         }
 
@@ -53,6 +59,12 @@ namespace SF3DRacing
 
             _setting.SetNextValue();
             _setting.Apply();
+
+            _prev.RemoveFromClassList("muted");
+            if (_setting.IsMaxValue)
+                _next.AddToClassList("muted");
+            else
+                _next.RemoveFromClassList("muted");
 
             _settingValue.text = _setting.GetStringValue();
         }

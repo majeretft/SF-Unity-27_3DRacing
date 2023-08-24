@@ -4,7 +4,7 @@ using UnityEngine.UIElements;
 
 namespace SF3DRacing
 {
-    public class MainMenuController : MonoBehaviour
+    public class MainMenuController : MonoBehaviour, IDependency<MenuSfx>
     {
         [SerializeField]
         private UIDocument _uIDocument;
@@ -42,6 +42,11 @@ namespace SF3DRacing
                 .Query()
                 .Children<VisualElement>()
                 .ToList();
+        }
+
+        public void Construct(MenuSfx dependency)
+        {
+            _sfx = dependency;
         }
 
         private void OnMouseEnterEvent(MouseEnterEvent e)

@@ -13,7 +13,7 @@ namespace SF3DRacing
         protected void Start()
         {
             _raceGroup.SetActive(false);
-            _prepareGroup.SetActive(false);
+            _prepareGroup.SetActive(true);
 
             _tracker.StateChangedEvent += OnStateChanged;
         }

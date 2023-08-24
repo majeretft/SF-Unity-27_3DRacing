@@ -150,6 +150,7 @@ GameObject:
   - component: {fileID: 3900160453166497515}
   - component: {fileID: 422103213015263184}
   - component: {fileID: 8178082108888002107}
+  - component: {fileID: 787098400838084847}
   m_Layer: 0
   m_Name: EngineSound
   m_TagString: Untagged
@@ -286,6 +287,18 @@ MonoBehaviour:
   _rpmCoef: 3
   _pitchBase: 0.75
   _volumeBase: 0.1
+--- !u!114 &787098400838084847
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1528769804163905657}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51288cdc618914046b03ca6cb92a5c4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2150632180091981086
 GameObject:
   m_ObjectHideFlags: 0
@@ -297,6 +310,7 @@ GameObject:
   - component: {fileID: 4793751883266487149}
   - component: {fileID: 2760711062609231164}
   - component: {fileID: 3681060288779520596}
+  - component: {fileID: 2231428381632966566}
   m_Layer: 0
   m_Name: WheelEffects
   m_TagString: Untagged
@@ -444,6 +458,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &2231428381632966566
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2150632180091981086}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51288cdc618914046b03ca6cb92a5c4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2759270260663586595
 GameObject:
   m_ObjectHideFlags: 0

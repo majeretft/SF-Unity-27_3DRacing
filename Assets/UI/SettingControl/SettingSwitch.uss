@@ -49,3 +49,7 @@
 .icon:hover {
     --unity-image-tint-color: rgb(100, 100, 100);
 }
+
+.muted {
+    visibility: hidden;
+}

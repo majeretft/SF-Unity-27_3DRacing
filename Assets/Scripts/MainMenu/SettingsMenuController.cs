@@ -5,7 +5,7 @@ using UnityEngine.UIElements;
 
 namespace SF3DRacing
 {
-    public class SettingsMenuController : MonoBehaviour
+    public class SettingsMenuController : MonoBehaviour, IDependency<MenuSfx>
     {
         [SerializeField]
         private UIDocument _uIDocumentRoot;
@@ -21,22 +21,6 @@ namespace SF3DRacing
             var menuSection = _uIDocumentRoot.rootVisualElement.Q<VisualElement>("SettingsMenu");
             var wrapper = menuSection.Q<VisualElement>("settings-wrapper");
 
-            // var menuRows = wrapper
-            //     .Query()
-            //     .Children<VisualElement>("setting-row")
-            //     .ToList();
-
-            // foreach (var obj in menuRows)
-            //     obj.RegisterCallback<MouseEnterEvent>(OnMouseEnterEvent);
-
-            // var menuButtons = wrapper
-            //     .Query()
-            //     .Children<VisualElement>("track-image")
-            //     .ToList();
-
-            // foreach (var obj in menuButtons)
-            //     obj.RegisterCallback<ClickEvent>(OnMouseClickEvent);
-
             var resetButton = wrapper.Q("reset-saves-button");
             resetButton.RegisterCallback<ClickEvent>(OnMouseClickEvent);
             resetButton.RegisterCallback<MouseEnterEvent>(OnMouseEnterEvent);
@@ -50,6 +34,11 @@ namespace SF3DRacing
                 wrapper.Insert(wrapper.childCount - 1, settingSwitch);
                 settingSwitch.Init(item, _sfx);
             }
+        }
+
+        public void Construct(MenuSfx dependency)
+        {
+            _sfx = dependency;
         }
 
         private void OnMouseClickEvent(ClickEvent e)

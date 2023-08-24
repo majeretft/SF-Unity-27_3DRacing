@@ -58,7 +58,7 @@ namespace SF3DRacing
 
         private void Save()
         {
-            PlayerPrefs.GetInt(Title, _currentIndex);
+            PlayerPrefs.SetInt(Title, _currentIndex);
         }
     }
 }
