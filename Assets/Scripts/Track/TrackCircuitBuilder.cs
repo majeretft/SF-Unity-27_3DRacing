@@ -11,9 +11,10 @@ namespace SF3DRacing
             ResetPoints(transform, points);
             LinkPoints(points, type);
             MarkPoints(type, points);
+            
+#if UNITY_EDITOR
             MarkSceneDirty(transform, points);
 
-#if UNITY_EDITOR
             UnityEditor.EditorUtility.SetDirty(transform.GetComponent<TrackPointCircuit>());
             foreach (TrackPoint p in points)
             {
@@ -78,6 +79,6 @@ namespace SF3DRacing
                 UnityEditor.EditorUtility.SetDirty(p);
             }
         }
-    }
 #endif
+    }
 }
